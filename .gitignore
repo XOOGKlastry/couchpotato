@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+desktop/python.zip
+desktop/payload.zip
+dist/downloads/*.exe
+dist/downloads/*.apk
+dist/downloads/*.zip
+desktop/app/mascot.png
+desktop/app/mascot.ico
+dist/mascot.png
+package-*/

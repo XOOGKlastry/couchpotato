@@ -21,6 +21,10 @@ repozytorium. Repozytorium zawiera kod Windows, stronę, testy oraz rozszerzenie
 Chrome/Brave. Kod Androida i jego zestaw budowania są obecnie przechowywane
 oddzielnie.
 
+Pliki maskotki `mascot.png` i `mascot.ico` są częścią gotowej paczki Windows,
+ale nie są dołączone do publicznego repozytorium. Przed lokalnym budowaniem
+skopiuj je z pobranej paczki do `desktop/app/`.
+
 ## Windows build
 
 Install Go and Python on the build machine, then run `python desktop/build.py`.

@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "couchpotato · YouTube + HBO Max",
+  "version": "1.6.1",
+  "description": "Tempo YouTube i przewijanie HBO Max o 5 sekund z pilota couchpotato.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8765/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Połącz couchpotato"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://*.hbomax.com/*",
+        "https://*.max.com/*"
+      ],
+      "js": [
+        "hbo-seek.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

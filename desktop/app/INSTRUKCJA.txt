@@ -1,0 +1,164 @@
+COUCHPOTATO — Windows 1.8
+
+URUCHOMIENIE
+1. Pobierz i uruchom couchpotato.exe. Python jest w srodku.
+2. Pozostaw okno couchpotato otwarte. Panel pokaze adres laptopa i kod.
+3. Na Androidzie 8 lub nowszym pobierz couchpotato.apk i otworz plik.
+   Zezwol przegladarce na instalacje tej aplikacji, jesli Android o to poprosi.
+4. Polacz telefon i laptop z tym samym Wi-Fi. W aplikacji wpisz adres
+   wyswietlony na laptopie, a nastepnie 4-cyfrowy kod.
+5. Kolejne uruchomienia: couchpotato w menu Start lub ten sam plik EXE.
+
+Windows 10/11, procesor x64 (Intel/AMD). Nie jest to wydanie dla macOS,
+Linux ani 32-bitowego Windows. APK dziala na Androidzie 8+.
+Aplikacja Windows nie ma podpisu certyfikatem wydawcy; zasady komputera
+firmowego lub SmartScreen moga blokowac jej uruchomienie.
+
+AKTUALIZACJA
+Zamknij poprzednie okno couchpotato / START.bat i uruchom nowe EXE.
+Aktualizacji APK nie trzeba odinstalowywac. Zmiany pilota pobiera z laptopa.
+Przy pierwszym przejsciu ze starej wersji zostanie utworzony nowy staly kod.
+Od tej wersji kod nie zmienia sie po restarcie ani aktualizacji.
+Kod i sparowanie sa zapisane w %LOCALAPPDATA%\couchpotato\pairing.json.
+Telefon pamieta polaczenie dla danego adresu laptopa. Zmiana IP lub
+wyczyszczenie danych aplikacji moze wymagac ponownego wpisania tego kodu.
+Aby odwolac dostep starych telefonow, zamknij aplikacje i usun pairing.json.
+Przy kolejnym uruchomieniu powstanie nowy kod i nowe sparowanie.
+
+Na Windows zezwol Pythonowi na dostep w sieci prywatnej. Podlacz TV przez
+HDMI, wybierz Win+P -> Duplikuj / Tylko drugi ekran i dzwiek przez HDMI.
+Pozostaw okno serwera otwarte. Ctrl+C konczy sterowanie.
+
+OBSŁUGA
+- Pasek u gory wpisuje tekst do aktywnego pola laptopa.
+- Przycisk Chrome z plusem otwiera nowa karte GOOGLE CHROME i wybiera pasek
+  adresu. Pole na telefonie jest od razu aktywne. Po wpisaniu zapytania
+  nacisnij strzalke wysylania: Chrome otworzy adres lub wykona wyszukiwanie.
+- Jesli Windows blokuje przeniesienie Chrome na pierwszy plan, pilot pokaze
+  komunikat. Wtedy wybierz okno Chrome. Aplikacja nie wpisze zapytania w inne okno.
+- Strzalki w lewo/prawo zmieniaja karte, ikona dwoch okien to Alt+Tab,
+  karta z X to Ctrl+W. Zamkniecie ostatniej karty moze zamknac przegladarke.
+- Ikona pelnego ekranu obok kart to F11 (pelny ekran przegladarki).
+- PPM otwiera menu pod kursorem. Sasiednia karta z plusem otwiera link
+  pod kursorem w nowej karcie (srodkowy przycisk myszy). Ustaw kursor na
+  linku; nie wybieraj najpierw PPM. W obszarze bez linku przegladarka moze
+  uruchomic automatyczne przewijanie — zakoncz je klawiszem Esc.
+- Duzy Tab pod kolem przechodzi do nastepnego pola/przycisku.
+- Srodek kola: jeden palec przesuwa kursor, stukniecie klika lewym przyciskiem,
+  dwa palce przewijaja. Przycisk myszy pod kolem klika PRAWYM przyciskiem.
+- Gora/dol kola: przytrzymaj, aby przewijac. Mnoznik rosnie co 1,5 sekundy:
+  1x, 2x, 3x, 4x ... do 12x. Pusc palec, aby zatrzymac i wrocic do 1x.
+  Przewijanie trafia do obszaru pod kursorem zgodnie z ustawieniami Windows.
+- Strzalki 5 s przy kole oraz pauza obsluguja YouTube (strzalki, K).
+  Ikona pelnego ekranu z malym symbolem odtwarzania to YouTube (F).
+  Jesli aktywne jest pole wyszukiwania lub komentarza, najpierw kliknij film.
+- Plus/minus i glosnik reguluja glosnosc Windows.
+- Ikona klawiatury rozwija dodatkowe klawisze. Wszystkie przyciski maja
+  nazwy dostepnosci dla czytnika ekranu i podpowiedzi w przegladarce.
+
+SERWISY
+YouTube, HBO Max i CANAL+ korzystaja z domyslnej przegladarki.
+Pomaranczowe 1, 2, 3 otwieraja Twoje wlasne adresy w BRAVE na laptopie.
+Ikona suwakow pod przyciskami otwiera edycje nazw i adresow tych skrotow.
+Adresy musza zaczynac sie od https://. Skroty zostaja w przegladarce / WebView
+telefonu dla danego adresu laptopa. Przy zmianie IP moze byc wymagane ich
+ponowne ustawienie. Konta i abonamenty zapewniasz samodzielnie.
+Brave i Chrome musza byc zainstalowane na laptopie w standardowym miejscu
+lub ich pliki brave.exe / chrome.exe musza byc dostepne w PATH.
+
+ZASILANIE I POLACZENIE
+Czerwony przycisk zasilania wymaga potwierdzenia. Odlicza 30 sekund;
+mozna anulowac przed koncem. Wylacza laptop, nie TV. Zapisz dokumenty.
+Nie wymusza zamykania programow; Windows moze wymagac potwierdzenia zapisu.
+Ikona monitora w aplikacji Android zmienia adres laptopa.
+
+BEZPIECZENSTWO
+Korzystaj z zaufanej domowej sieci Wi-Fi; HTTP nie jest szyfrowane.
+Kod daje dostep do kursora i klawiatury. Nie przekierowuj portu 8765 w routerze.
+Hasla do serwisow wpisuj na laptopie. Program nie zapisuje wysylanego tekstu.
+Po 5 blednych probach kodu odczekaj 5 minut. Kod pozostaje staly.
+Nie uruchamiaj serwera i przegladarki jako administrator.
+
+WERYFIKACJA
+Sprawdzono skladnie, autoryzacje, adresy, gesty i mnozniki, anulowanie
+oczekujacych komend oraz uruchamianie Chrome i wybieranie paska adresu
+na symulowanym kontrolerze. APK jest kompilowany i podpisywany.
+Nie przeprowadzono testu na fizycznym telefonie, laptopie Windows ani TV.
+Odtwarzanie DRM i HDMI zalezy od serwisu, konta, przegladarki i sprzetu.
+
+NOWOSCI 1.3
+- Podglad: przycisk monitora nad kartami. Odswieza caly pulpit co ok. sekunde,
+  tylko po wlaczeniu. Zamkniecie podgladu / schowanie aplikacji go zatrzymuje.
+  Obrazy sa przesylane bez zapisywania na dysku; wymagane sparowanie.
+  To podglad do sterowania, nie streaming filmu. DRM moze dac czarny obraz.
+- Przytrzymaj + / - glosnosci albo cofanie / przewijanie 5 s w YouTube.
+  Pusc, aby zatrzymac powtarzanie. Pauza, zasilanie i zamykanie kart nie powtarzaja.
+- Autostart wlacza sie przy pierwszym uruchomieniu tego wydania EXE.
+  Dziala po zalogowaniu do konta Windows, z minimalizowanym oknem.
+  Przelacznik jest pod ikona ustawien obok przycisku Podglad.
+  Wybrana opcja zostaje zachowana. Otworz okno z paska zadan, aby je zamknac.
+- Ikona i skrot w menu Start wykorzystuja maskotke couchpotato.
+
+NOWOSCI 1.4
+- Ikona powiekszenia w podgladzie otwiera obraz na caly obszar aplikacji.
+  Telefon mozna obrocic poziomo. Stukniecie klika na laptopie.
+  Dwa palce powiekszaja; przeciagniecie powiekszonego obrazu przesuwa widok.
+  + / - powiekszaja i pomniejszaja, licznik powiekszenia resetuje obraz.
+  Obraz odswieza sie okolo raz na sekunde, wiec poczekaj na efekt klikniecia.
+- W APK 1.4 boczne przyciski glosnosci steruja Windowsem podczas
+  otwartego pilota. Po wyjsciu z pilota znow steruja telefonem.
+- Budzenie jest na ekranie polaczenia w aplikacji Android: Obudz komputer.
+  Wpisz adres laptopa i MAC jego karty sieciowej (ipconfig /all w Windows).
+  MAC zostanie zapamietany osobno dla tego adresu laptopa.
+  Wlacz Wake-on-LAN w BIOS/UEFI oraz Wake on Magic Packet i zezwolenie na
+  wybudzanie w ustawieniach karty sieciowej Windows. Zalezy to od sprzetu.
+  Najpewniejsze jest polaczenie laptopa kablem Ethernet i budzenie z uspienia.
+  Telefon pozostaje na Wi-Fi tego samego routera. Budzenie przez Wi-Fi,
+  po pelnym wylaczeniu lub przez siec goscinna nie jest gwarantowane.
+  Wyslanie pakietu nie oznacza potwierdzenia obudzenia. Poczekaj i kliknij Polacz.
+
+NOWOSCI 1.6
+- Jeden podluzny przycisk glosnosci. Przy kole tylko cofanie/przewijanie 5 s.
+- Edycja zachowuje oryginalny uklad, rozmiary i odstepy. Przesuwasz wybrany
+  element swobodnie, bez siatki i przestawiania pozostalych. Mozliwe nakladanie.
+- Gotowe zapisuje, Anuluj przywraca stan sprzed edycji, Domyslny resetuje.
+  Stary uklad siatkowy z 1.5 jest pomijany, aby przywrocic pierwotny pilot.
+- Tempo: suwak 1 / 1.25 / 1.5 / 1.75 / 2 / 3 / 4x i minus/plus.
+  Wymaga jednorazowego polaczenia dodatku do Chrome lub Brave:
+  1. Uruchom nowe EXE. W ustawieniach pilota wybierz Dodatek YouTube,
+     potem Otworz folder dodatku (folder otworzy sie na laptopie).
+  2. Na laptopie otworz chrome://extensions albo brave://extensions.
+     Wlacz Tryb programisty, Wczytaj rozpakowane i wybierz ten folder:
+     %LOCALAPPDATA%\couchpotato\youtube-extension
+  3. Kliknij ikone dodatku i wpisz ten sam czterocyfrowy kod couchpotato.
+  4. Odswiez karte YouTube i otworz film. Ta karta musi byc aktywna.
+  Pilot pokazuje predkosc potwierdzona przez odtwarzacz; przy bledzie
+  pokazuje komunikat. Transmisja na zywo moze odrzucic wybrana predkosc.
+  Dodatek ma osobny token uprawniajacy tylko do obslugi tempa.
+  Pozostale funkcje pilota nie wymagaja dodatku.
+- Wystarczy nowe EXE; APK 1.4 pobierze nowy interfejs z laptopa.
+
+NOWOSCI 1.6.1 — HBO MAX
+Przyciski 5 s przy kole dzialaja tez z HBO Max w Chrome/Brave po wlaczeniu
+zaktualizowanego dodatku couchpotato YouTube + HBO Max.
+Zamknij stara aplikacje, uruchom nowe EXE, otworz chrome://extensions lub
+brave://extensions i kliknij przeladowanie dodatku. Zatwierdz nowe uprawnienia
+jesli przegladarka zapyta. Odswiez karte HBO Max, wlacz film i kliknij obraz,
+aby aktywna byla karta odtwarzacza, a nie pole wyszukiwania.
+Przytrzymanie przycisku powtarza skoki po 5 sekund. Na poczatku/koncu
+zakresu przewijanie zatrzymuje sie. Dodatek nie wymusza przewijania transmisji
+na zywo ani materialu bez dostepnej osi czasu. Testowano na symulowanym
+odtwarzaczu; nie wykonano testu na zalogowanym koncie HBO Max.
+
+NOWOSCI 1.7
+Zasilanie jest na samej gorze, w okraglym czerwonym przycisku.
+Usun obok wpisywanego tekstu usuwa zaznaczenie lub poprzedni znak lokalnie.
+Przy pustym pasku wysyla Backspace do aktywnego pola na laptopie.
+Na dole pozostaja zawsze widoczne Esc i cztery strzalki, bez zwijania.
+
+NOWOSCI 1.8
+W ustawieniach pilota mozna wlaczyc automatyczne wylaczenie komputera po
+4 godzinach bezczynnosci. Bezczynnosc oznacza brak uzywania myszy i klawiatury,
+takze przez pilot couchpotato. Ustawienie jest domyslnie wylaczone i zapisywane
+na komputerze. Po osiagnieciu limitu zaczyna sie 30-sekundowe odliczanie,
+ktore mozna anulowac z pilota.

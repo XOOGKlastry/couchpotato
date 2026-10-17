@@ -1,0 +1,12 @@
+const assert=require('assert'),Viewer=require('./KanapaTV/viewer.js');
+const clicks=[];const stage={clientWidth:400,clientHeight:200,setPointerCapture(){},getBoundingClientRect:()=>({left:0,top:0,width:400,height:200})};
+const image={offsetWidth:400,offsetHeight:200,style:{},hidden:false,getBoundingClientRect:()=>({left:200-200*v.scale+v.x,top:100-100*v.scale+v.y,width:400*v.scale,height:200*v.scale})};
+const v=new Viewer(stage,image,(x,y)=>clicks.push([x,y]));
+const e=(id,x,y)=>({pointerId:id,clientX:x,clientY:y,preventDefault(){}});
+stage.onpointerdown(e(1,100,50));stage.onpointerup(e(1,100,50));assert.deepEqual(clicks.pop(),[.25,.25]);
+v.zoom(2);stage.onpointerdown(e(1,200,100));stage.onpointerup(e(1,200,100));assert.deepEqual(clicks.pop(),[.5,.5]);
+stage.onpointerdown(e(1,200,100));stage.onpointermove(e(1,300,100));stage.onpointerup(e(1,300,100));assert.equal(clicks.length,0);assert.equal(v.x,100);
+stage.onpointerdown(e(1,200,100));stage.onpointerdown(e(2,300,100));stage.onpointermove(e(2,350,100));stage.onpointerup(e(2,350,100));stage.onpointerup(e(1,200,100));assert.equal(clicks.length,0);assert.equal(v.scale,3);
+v.zoom(100);assert.equal(v.scale,6);v.reset();assert.equal(v.scale,1);assert.equal(v.x,0);
+stage.onpointerdown(e(1,10,10));stage.onpointercancel(e(1,10,10));stage.onpointerup(e(1,10,10));assert.equal(clicks.length,0);
+console.log('PASS: transformed click mapping, drag without clicks, pinch without phantom clicks, bounds and reset');
