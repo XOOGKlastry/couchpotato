@@ -30,7 +30,7 @@ vm.createContext(context);vm.runInContext(fs.readFileSync('KanapaTV/app.js','utf
  for(const b of groups['[data-service]'])await b.onclick();
  for(const b of groups['[data-key]'])await b.onclick();
  for(const b of groups['[data-shortcut]'])await b.onclick();
- for(const b of groups['[data-action]'])await b.onclick();assert(requests.some(r=>r.data.action==='open_link_tab'));assert(requests.some(r=>r.data.action==='right_click'));assert.equal(requests.filter(r=>r.data.action==='open').length,3);
+ for(const b of groups['[data-action]'])await b.onclick();assert(requests.some(r=>r.data.action==='open_link_tab'));assert(requests.some(r=>r.data.action==='right_click'));assert.equal(requests.filter(r=>r.data.action==='open').length,4);
  elements.pad.onpointerdown({pointerId:1,clientX:0,clientY:0});elements.pad.onpointerup({pointerId:1});
  await vm.runInContext('queue',context);
  assert.equal(requests.filter(r=>r.data.action==='click').length,1);

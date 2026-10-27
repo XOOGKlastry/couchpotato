@@ -108,7 +108,7 @@ $('pairform').onsubmit = async e => {
   try { await pair($('pin').value); } catch (e) { status('Nie udało się połączyć', 'error'); toast(e.message, true); }
   finally { button.disabled = false; }
 };
-const serviceNames = { youtube: 'YouTube', hbo: 'HBO Max', canal: 'CANAL+' };
+const serviceNames = { youtube: 'YouTube', hbo: 'HBO Max', canal: 'CANAL+', polsat: 'Polsat Box Go' };
 document.querySelectorAll('[data-service]').forEach(b => b.onclick = () => send({ action: 'open', service: b.dataset.service }, 'Otwieram ' + serviceNames[b.dataset.service] + ' na laptopie'));
 document.querySelectorAll('[data-key]').forEach(b => b.onclick = () => send({ action: 'key', key: b.dataset.key }));
 document.querySelectorAll('[data-shortcut]').forEach(b => b.onclick = () => send({action: 'shortcut', shortcut: b.dataset.shortcut}));
