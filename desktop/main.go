@@ -49,7 +49,7 @@ func unpack(root string) (string, error) {
   src.Close(); closeErr := dst.Close()
   if copyErr != nil { return "", copyErr }; if closeErr != nil { return "", closeErr }
  }
- if err := os.WriteFile(filepath.Join(temp, ".complete"), []byte("1.6"), 0600); err != nil { return "", err }
+ if err := os.WriteFile(filepath.Join(temp, ".complete"), []byte("2026-10-27-2030"), 0600); err != nil { return "", err }
  if err := os.Rename(temp, target); err != nil { return "", err }
  return target, nil
 }
@@ -93,7 +93,7 @@ func main() {
  }
  base := os.Getenv("LOCALAPPDATA"); if base == "" { fail(fmt.Errorf("brak folderu LOCALAPPDATA")) }
  root := filepath.Join(base, "couchpotato")
- fmt.Println("couchpotato 1.6 — uruchamianie…")
+ fmt.Println("couchpotato — Edycja 27.10 20:30 — uruchamianie…")
  release, err := unpack(root); if err != nil { fail(err) }
  iconPath,_ := syscall.UTF16PtrFromString(filepath.Join(release,"mascot.ico"))
  user := syscall.NewLazyDLL("user32.dll")
