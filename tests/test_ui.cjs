@@ -5,7 +5,7 @@ for(const m of html.matchAll(/href="#([^"]+)"/g))assert(ids.includes(m[1]),'Miss
 class Element{
  constructor(id='',dataset={}){this.id=id;this.dataset=dataset;this.hidden=false;this.disabled=false;this.value='';this.textContent='';this.open=false;this.style={};this.offsetWidth=300;this.offsetHeight=180;this.clientWidth=300;this.clientHeight=180;this.listeners={};this.classList={add(){},remove(){},toggle(){}};}
  addEventListener(name,fn){this.listeners[name]=fn;}
- showModal(){this.open=true;}close(){this.open=false;}scrollIntoView(){}setPointerCapture(){}appendChild(){}focus(){}blur(){}setAttribute(){}removeAttribute(){}
+ showModal(){this.open=true;}close(){this.open=false;}scrollIntoView(){}setPointerCapture(){}appendChild(){}append(...nodes){for(const n of nodes)if(n.id)elements[n.id]=n;}before(...nodes){this.append(...nodes);}focus(){}blur(){}setAttribute(){}removeAttribute(){}
 }
 const elements=Object.fromEntries(ids.map(id=>[id,new Element(id)]));
 const groups={};for(const [attr,key] of [['action','action'],['service','service'],['key','key'],['scroll','scroll'],['shortcut','shortcut'],['brave','brave'],['hold-scroll','holdScroll']])groups[`[data-${attr}]`]=[...html.matchAll(new RegExp(`data-${attr}="([^"]+)"`,'g'))].map(m=>new Element('',{[key]:m[1]}));
@@ -30,13 +30,13 @@ vm.createContext(context);vm.runInContext(fs.readFileSync('KanapaTV/app.js','utf
  for(const b of groups['[data-service]'])await b.onclick();
  for(const b of groups['[data-key]'])await b.onclick();
  for(const b of groups['[data-shortcut]'])await b.onclick();
- for(const b of groups['[data-action]'])await b.onclick();assert(requests.some(r=>r.data.action==='open_link_tab'));assert(requests.some(r=>r.data.action==='right_click'));assert.equal(requests.filter(r=>r.data.action==='open').length,3);
+ for(const b of groups['[data-action]'])await b.onclick();assert(requests.some(r=>r.data.action==='open_link_tab'));assert(requests.some(r=>r.data.action==='right_click'));assert.equal(requests.filter(r=>r.data.action==='open').length,4);
  elements.pad.onpointerdown({pointerId:1,clientX:0,clientY:0});elements.pad.onpointerup({pointerId:1});
  await vm.runInContext('queue',context);
  assert.equal(requests.filter(r=>r.data.action==='click').length,1);
  assert(html.indexOf('id="textform"')<html.indexOf('class="services-section'));
  assert(html.includes('maxlength="4"'));
- assert.equal(requests.filter(r=>r.data.action==='shortcut').length,6);
+ assert.equal(requests.filter(r=>r.data.action==='shortcut').length,4);
  elements['edit-brave'].onclick();assert(elements['brave-dialog'].open);
  for(let i=0;i<3;i++){elements['brave-name-'+i].value='Serwis '+i;elements['brave-url-'+i].value='https://example.com/'+i;}
  elements['brave-form'].onsubmit({preventDefault(){}});assert(!elements['brave-dialog'].open);

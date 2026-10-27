@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parent
 PORT = 8765
 CODE = f'{secrets.randbelow(10000):04d}'
 TOKEN = secrets.token_urlsafe(32)
-SERVICES = {'youtube': 'https://www.youtube.com/', 'hbo': 'https://www.hbomax.com/', 'canal': 'https://www.canalplus.com/pl/'}
+SERVICES = {'youtube': 'https://www.youtube.com/', 'hbo': 'https://www.hbomax.com/', 'canal': 'https://www.canalplus.com/pl/', 'polsat': 'https://polsatboxgo.pl/'}
 KEYS = {'enter': 13, 'space': 32, 'esc': 27, 'tab': 9, 'backspace': 8, 'left': 37, 'up': 38, 'right': 39, 'down': 40, 'fullscreen': 70, 'browser_fullscreen': 122, 'seek5_back': 37, 'seek5_forward': 39, 'youtube_play': 75, 'volup': 175, 'voldown': 174, 'mute': 173, 'play': 179, 'back': 166}
 SHORTCUTS = {'tab_left': (17, 16, 9), 'tab_right': (17, 9), 'alt_tab': (18, 9), 'close_tab': (17, 87), 'address_bar': (17, 76)}
 LOCK = threading.Lock()
@@ -337,7 +337,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.reply(403, '{}')
         if self.path == '/setup' and ipaddress.ip_address(self.client_address[0]).is_loopback:
             return self.reply(200, json.dumps({'code': CODE, 'addresses': self.server.addresses}))
-        files = {'/layout-editor.js': ('layout-editor.js', 'text/javascript; charset=utf-8'), '/viewer.js': ('viewer.js', 'text/javascript; charset=utf-8'), '/extras.js': ('extras.js', 'text/javascript; charset=utf-8'), '/mascot.png': ('mascot.png', 'image/png'), '/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'text/javascript; charset=utf-8'), '/gestures.js': ('gestures.js', 'text/javascript; charset=utf-8'), '/style.css': ('style.css', 'text/css; charset=utf-8')}
+        files = {'/polsat-box-go.png': ('polsat-box-go.png', 'image/png'), '/layout-editor.js': ('layout-editor.js', 'text/javascript; charset=utf-8'), '/viewer.js': ('viewer.js', 'text/javascript; charset=utf-8'), '/extras.js': ('extras.js', 'text/javascript; charset=utf-8'), '/mascot.png': ('mascot.png', 'image/png'), '/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'text/javascript; charset=utf-8'), '/gestures.js': ('gestures.js', 'text/javascript; charset=utf-8'), '/style.css': ('style.css', 'text/css; charset=utf-8')}
         if self.path not in files:
             return self.reply(404, '{}')
         file, mime = files[self.path]

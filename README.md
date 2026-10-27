@@ -60,3 +60,10 @@ not been performed. The Windows executable has no publisher certificate.
 1.8 adds an opt-in, persisted Windows idle monitor. After four hours without
 keyboard or mouse input it starts the existing cancellable 30-second shutdown
 countdown. Remote input also resets the Windows idle timer. APK 1.4 remains compatible.
+
+## Edycja 27.10 20:30
+
+Dodaje przycisk Polsat Box Go z oficjalną ikoną. Gotowy EXE i ZIP są dostępne
+na stronie pobierania; Android APK 1.4 pozostaje zgodny. Sprawdzono uruchomienie
+EXE na Windows, parowanie, uwierzytelnione połączenie, ikonę i oznaczenie edycji.
+

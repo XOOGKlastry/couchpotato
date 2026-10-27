@@ -3,7 +3,7 @@ const $ = id => document.getElementById(id);
 // This setting is injected here so older Android WebViews receive it from the
 // updated Windows app without requiring a new APK.
 const idleLabel=document.createElement('label'),idleText=document.createElement('span'),idleInput=document.createElement('input'),idleStatus=document.createElement('p');
-idleLabel.className='setting-row';idleLabel.htmlFor='idle-shutdown';idleText.textContent='Wyłącz po 4 h bezczynności';idleInput.type='checkbox';idleInput.id='idle-shutdown';idleStatus.id='idle-status';idleStatus.setAttribute('role','status');idleStatus.textContent='Liczy brak używania myszy i klawiatury.';idleLabel.append(idleText,idleInput);const extensionHelp=document.querySelector('.extension-help');extensionHelp.before(idleLabel,idleStatus);document.querySelector('.edition').textContent='REMOTE / 1.8';
+idleLabel.className='setting-row';idleLabel.htmlFor='idle-shutdown';idleText.textContent='Wyłącz po 4 h bezczynności';idleInput.type='checkbox';idleInput.id='idle-shutdown';idleStatus.id='idle-status';idleStatus.setAttribute('role','status');idleStatus.textContent='Liczy brak używania myszy i klawiatury.';idleLabel.append(idleText,idleInput);const extensionHelp=document.querySelector('.extension-help');extensionHelp.before(idleLabel,idleStatus);document.querySelector('.edition').textContent='Edycja 27.10 20:30';
 let token = localStorage.getItem('kanapaToken') || '';
 let queue = Promise.resolve(), toastTimer, pingBusy = false, powerState = 'idle', powerDeadline = 0;
 function status(message, state = '') {
@@ -108,7 +108,7 @@ $('pairform').onsubmit = async e => {
   try { await pair($('pin').value); } catch (e) { status('Nie udało się połączyć', 'error'); toast(e.message, true); }
   finally { button.disabled = false; }
 };
-const serviceNames = { youtube: 'YouTube', hbo: 'HBO Max', canal: 'CANAL+' };
+const serviceNames = { youtube: 'YouTube', hbo: 'HBO Max', canal: 'CANAL+', polsat: 'Polsat Box Go' };
 document.querySelectorAll('[data-service]').forEach(b => b.onclick = () => send({ action: 'open', service: b.dataset.service }, 'Otwieram ' + serviceNames[b.dataset.service] + ' na laptopie'));
 document.querySelectorAll('[data-key]').forEach(b => b.onclick = () => send({ action: 'key', key: b.dataset.key }));
 document.querySelectorAll('[data-shortcut]').forEach(b => b.onclick = () => send({action: 'shortcut', shortcut: b.dataset.shortcut}));
